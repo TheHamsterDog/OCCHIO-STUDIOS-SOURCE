@@ -1,0 +1,135 @@
+.carousel {
+  height: 396px;
+}
+
+.image-instagram {
+  image-rendering: pixelated;
+  left: 33%;
+  width: 40%;
+  top: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+.image-instagram-hide {
+  width: 32%;
+  top: 100%;
+  display: none;
+}
+.image-center {
+  cursor: pointer;
+  image-rendering: pixelated;
+  transition: all 0.2s;
+  left: 33%;
+  width: 34%;
+  position: absolute;
+  top: 43%;
+  transform: translate(-50%, -50%);
+}
+.image-left {
+  cursor: pointer;
+  image-rendering: pixelated;
+  transition: all 0.2s;
+  left: -2%;
+  width: 32%;
+  position: absolute;
+  top: 43%;
+  transform: translate(-50%, -50%);
+}
+.image-right {
+  cursor: pointer;
+  image-rendering: pixelated;
+  transition: all 0.2s;
+  left: 69%;
+  width: 32%;
+  position: absolute;
+  top: 43%;
+  transform: translate(-50%, -50%);
+}
+.image-rextend {
+  cursor: pointer;
+  image-rendering: pixelated;
+  transition: all 0.2s;
+  left: 87%;
+  clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
+  width: 32%;
+  position: absolute;
+  top: 43%;
+  transform: translate(-50%, -50%);
+}
+.image-lextend {
+  cursor: pointer;
+  image-rendering: pixelated;
+  transition: all 0.2s;
+  left: -36%;
+  clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
+  width: 32%;
+  position: absolute;
+  top: 43%;
+  transform: translate(-50%, -50%);
+}
+.image-back {
+  left: -100%;
+  display: none;
+}
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 120;
+}
+
+.navbar-mobile {
+  cursor: pointer;
+}
+.navbar-mobile-menu {
+  z-index: 120;
+  cursor: pointer;
+  position: absolute;
+  height: 57px;
+  width: 50px;
+  text-align: right;
+  right: 0px;
+  top: 35px;
+}
+.navbar-mobile-menu-icon {
+  position: relative;
+  height: 3px;
+  width: 20px;
+  background-color: black;
+}
+.navbar-mobile-menu-icon::after {
+  position: absolute;
+  height: 3px;
+  content: " ";
+  width: 30px;
+  right: 0px;
+  top: -10px;
+  background-color: black;
+}
+.navbar-mobile-menu-icon::before {
+  position: absolute;
+  height: 3px;
+  content: " ";
+  width: 30px;
+  right: 0px;
+  top: 10px;
+  background-color: black;
+}
+.navbar-mobile-checkbox:checked ~ .navbar-mobile-list {
+  transform: translate(0, 0vh);
+}
+.navbar-mobile-list {
+  transition: all 0.2s;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  position: fixed;
+  transform: translate(0, -100vh);
+}
+
+body {
+  margin: 0;
+}
+
+/*# sourceMappingURL=global.css.map */
