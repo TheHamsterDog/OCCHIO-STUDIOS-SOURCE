@@ -1,5 +1,76 @@
-<script>
+<script lang="typescript">
 	import Navbar from "./components/Navbar.svelte";
+	const images = [
+		{ link: "image1.png", position: 0 },
+		{ link: "image2.png", position: 1 },
+		{ link: "image3.png", position: 2 },
+		{ link: "image1.png", position: 3 },
+		{ link: "image2.png", position: 4 },
+		{ link: "image3.png", position: 5 },
+	];
+	let clickHandler = (e) => {
+		console.log(e.target);
+		const element = document.getElementById(`${e.target.id}`);
+		const element1 = document.getElementById(`0`); // extreme left
+		const element2 = document.getElementById(`1`); //left
+		const element3 = document.getElementById(`2`); //center
+		const element4 = document.getElementById(`3`); //right
+		const element5 = document.getElementById(`4`); //extreme right
+		const element6 = document.getElementById(`5`); //back
+
+		if (Number(e.target.id) === 0) {
+			element.className = "image-center";
+			element2.className = "image-right";
+			element3.className = "image-rextend";
+			element4.className = "image-back";
+
+			element5.className = "image-lextend";
+			element6.className = "image-left";
+		}
+		if (Number(e.target.id) === 1) {
+			element.className = "image-center";
+			element1.className = "image-left";
+			element3.className = "image-right";
+			element4.className = "image-rextend";
+			element5.className = "image-back";
+			element6.className = "image-lextend";
+		}
+		if (Number(e.target.id) === 2) {
+			element.className = "image-center";
+			element1.className = "image-lextend";
+			element2.className = "image-left";
+			element4.className = "image-right";
+			element5.className = "image-rextend";
+			element6.className = "image-back";
+		}
+		if (Number(e.target.id) === 3) {
+			element.className = "image-center";
+			element1.className = "image-back";
+			element2.className = "image-lextend";
+			element3.className = "image-left";
+			element5.className = "image-right";
+			element6.className = "image-rextend";
+		}
+
+		if (Number(e.target.id) === 4) {
+			element.className = "image-center";
+			element1.className = "image-rextend";
+			element2.className = "image-back";
+			element3.className = "image-lextend";
+			element4.className = "image-left";
+			element6.className = "image-right";
+		}
+		if (Number(e.target.id) === 5) {
+			element.className = "image-center";
+			element1.className = "image-right";
+			element2.className = "image-rextend";
+			element3.className = "image-back";
+			element5.className = "image-left";
+			element4.className = "image-lextend";
+			// element6.className = "image-lextend";
+		}
+		console.log(element);
+	};
 </script>
 
 <main class="bg-gray-100 w-full">
@@ -35,7 +106,9 @@
 				/>
 			</svg>
 		</button>
-		<div class="md:flex  justify-between text-white items-center">
+		<div
+			class="md:flex bg-black z-10	  justify-between text-white items-center"
+		>
 			<div class="md:w-5/12 ">
 				<h2 class="font-bold text-xl">ABOUT OCCHIO</h2>
 				<h1 class="font-extrabold text-4xl mt-4">
@@ -54,43 +127,35 @@
 				</p>
 			</div>
 
-			<div
-				class="md:w-5/12 md:flex m-24 mb-48 ml-24 mr-0 md:m-0 relative "
-			>
-				<input
-					type="radio"
-					id="a"
-					name="center"
-					class="hidden control1"
-				/>
-				<input
-					type="radio"
-					name="center"
-					checked
-					id="b"
-					class="hidden control2"
-				/>
-				<input
-					type="radio"
-					name="center"
-					id="c"
-					class="hidden control3"
-				/>
-				<img class="image-instagram" src="instagram.png" />
-
-				<label class="image1 mr-6" for="a">
-					<img src="image1.png" class="image1-image" alt="" />
-				</label>
-				<label for="b" class="image2 mr-6">
-					<img src="image2.png" class="image2-image" alt="" />
-				</label>
-				<label for="c" class="image3 mr-6">
-					<img src="image3.png" class="image3-image" alt="" />
-				</label>
+			<div class="md:w-5/12 md:flex ml-24 mr-0 carousel md:m-0 relative ">
+				<img class="image-instagram" alt="a" src="frame-phone.png" />
+				{#each images as image}
+					<label for="a">
+						<img
+							src={image.link}
+							id={image.position.toString()}
+							on:click={clickHandler}
+							class={image.position === 0
+								? "image-lextend"
+								: image.position === 1
+								? "image-left"
+								: image.position === 2
+								? "image-center"
+								: image.position === 3
+								? "image-right"
+								: image.position === 4
+								? "image-rextend"
+								: "image-back"}
+							alt=""
+						/>
+					</label>
+				{/each}
 			</div>
 		</div>
 
-		<h3 class="font-bold md:text-6xl mt-4 md:mb-0 mb-8 text-4xl md:w-7/12 font-sans">
+		<h3
+			class="font-bold md:text-6xl mt-4 md:mb-0 mb-8 text-4xl md:w-7/12 font-sans"
+		>
 			Lorem ipsum dolor sit amet, consectetur adipiscing elit
 		</h3>
 		<div class="flex justify-between items-center">

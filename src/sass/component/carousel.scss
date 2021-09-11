@@ -1,50 +1,7 @@
-.control2:checked~.image2 {
-    left: 33%;
-    width: 32%;
-    top: 100%;
-    z-index: 4;
-    position: absolute;
-    transform: translate(-50%, -50%);
-
+.carousel {
+    height: 396px;
 }
 
-.control1:checked~.image1 {
-    left: 33%;
-    width: 32%;
-    top: 100%;
-    z-index: 4;
-    position: absolute;
-    transform: translate(-50%, -50%);
-
-    // transform: scale(1.02) translate(-50%, -50%);
-}
-
-.control1:checked~.image2 {
-    left: 0;
-    width: 32%;
-    position: absolute;
-    top: 100%;
-    transform: translate(-50%, -50%);
-}
-
-.control3:checked~.image3 {
-    left: 33%;
-    width: 32%;
-    top: 100%;
-    z-index: 4;
-    position: absolute;
-    transform: translate(-50%, -50%);
-    // transform: scale(1.02) translate(-50%, -50%);
-}
-
-.control3:checked~.image2 {
-    width: 32%;
-    left: 66%;
-    top: 100%;
-    transform: translate(-50%, -50%);
-    // max-width: 10rem;
-    position: absolute;
-}
 
 .image {
     &-instagram {
@@ -57,47 +14,80 @@
 
         image-rendering: pixelated;
         left: 33%;
-        width: 32%;
-        top: 100%;
+        width:40%;
+        // top: 1.8rem;    
+        top: 50%;
         // max-width: 10rem;
         position: absolute;
         transform: translate(-50%, -50%);
     }
 
-    &1 {
-        cursor: pointer;
-        image-rendering: pixelated;
-        transition: all 0.2s;
-        left: 0;
-        width: 32%;
-        position: absolute;
-        top: 100%;
-        transform: translate(-50%, -50%);
-    }
-
-    &2 {
+    &-center {
         cursor: pointer;
         image-rendering: pixelated;
         transition: all 0.2s;
         left: 33%;
-        width: 32%;
-        top: 100%;
-        // max-width: 10rem;
+        width: 34%;
         position: absolute;
+        top: 43%;
         transform: translate(-50%, -50%);
     }
 
-    &3 {
+    &-left {
         cursor: pointer;
         image-rendering: pixelated;
         transition: all 0.2s;
+        left: -2%;
         width: 32%;
-        left: 66%;
-        top: 100%;
-        transform: translate(-50%, -50%);
-        // max-width: 10rem;
         position: absolute;
+        top: 43%;
+        transform: translate(-50%, -50%);
     }
+
+    &-right {
+        cursor: pointer;
+        image-rendering: pixelated;
+        transition: all 0.2s;
+        left: 69%;
+        width: 32%;
+        position: absolute;
+        top: 43%;
+        transform: translate(-50%, -50%);
+    }
+
+    &-rextend {
+        cursor: pointer;
+        image-rendering: pixelated;
+        transition: all 0.2s;
+        left: 87%;
+        clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
+        width: 32%;
+        position: absolute;
+        top: 43%;
+        transform: translate(-50%, -50%);
+    }
+
+    &-lextend {
+        cursor: pointer;
+        image-rendering: pixelated;
+        transition: all 0.2s;
+        left: -36%;
+        clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
+        width: 32%;
+        position: absolute;
+        top: 43%;
+        transform: translate(-50%, -50%);
+        // display: none;
+    }
+
+    &-back {
+        left: -100%;
+        display: none;
+    }
+
+    &1 {}
+
+
 }
 
 .image2 {}
